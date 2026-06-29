@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-CustomerDocumentValidation.Worker-38b335b8-f633-4041-8d5e-d81adfd3617d</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerDocumentValidation.Application\CustomerDocumentValidation.Application.csproj" />
+    <ProjectReference Include="..\CustomerDocumentValidation.Infrastructure\CustomerDocumentValidation.Infrastructure.csproj" />
+    <ProjectReference Include="..\CustomerDocumentValidation.Domain\CustomerDocumentValidation.Domain.csproj" />
+  </ItemGroup>
+</Project>

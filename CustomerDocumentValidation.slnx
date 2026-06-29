@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CustomerDocumentValidation.Api/CustomerDocumentValidation.Api.csproj" />
+    <Project Path="src/CustomerDocumentValidation.Application/CustomerDocumentValidation.Application.csproj" />
+    <Project Path="src/CustomerDocumentValidation.Domain/CustomerDocumentValidation.Domain.csproj" />
+    <Project Path="src/CustomerDocumentValidation.Infrastructure/CustomerDocumentValidation.Infrastructure.csproj" />
+    <Project Path="src/CustomerDocumentValidation.SharedKernel/CustomerDocumentValidation.SharedKernel.csproj" />
+    <Project Path="src/CustomerDocumentValidation.Worker/CustomerDocumentValidation.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CustomerDocumentValidation.Application.Tests/CustomerDocumentValidation.Application.Tests.csproj" />
+    <Project Path="tests/CustomerDocumentValidation.Domain.Tests/CustomerDocumentValidation.Domain.Tests.csproj" />
+    <Project Path="tests/CustomerDocumentValidation.Infrastructure.Tests/CustomerDocumentValidation.Infrastructure.Tests.csproj" />
+    <Project Path="tests/CustomerDocumentValidation.Worker.Tests/CustomerDocumentValidation.Worker.Tests.csproj" />
+  </Folder>
+</Solution>

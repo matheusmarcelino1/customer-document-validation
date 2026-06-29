@@ -1,0 +1,6 @@
+@CustomerDocumentValidation.Api_HostAddress = http://localhost:5208
+
+GET {{CustomerDocumentValidation.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

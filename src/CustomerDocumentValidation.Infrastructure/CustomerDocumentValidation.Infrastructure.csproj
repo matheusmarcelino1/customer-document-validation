@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerDocumentValidation.Application\CustomerDocumentValidation.Application.csproj" />
+    <ProjectReference Include="..\CustomerDocumentValidation.Domain\CustomerDocumentValidation.Domain.csproj" />
+    <ProjectReference Include="..\CustomerDocumentValidation.SharedKernel\CustomerDocumentValidation.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
