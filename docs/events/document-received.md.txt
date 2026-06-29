@@ -1,0 +1,31 @@
+# Evento: DocumentReceived
+
+## Tópico
+
+document-received
+
+## Publicador
+
+CustomerDocumentValidation.Api
+
+## Consumidor
+
+CustomerDocumentValidation.Worker
+
+## Quando é publicado
+
+Após a API receber os dados cadastrais, salvar o documento no S3 e persistir o cadastro no MongoDB.
+
+## Payload planejado
+
+```json
+{
+  "eventId": "evt-123",
+  "registrationId": "reg-123",
+  "documentId": "doc-123",
+  "bucket": "customer-documents",
+  "key": "registrations/reg-123/document.png",
+  "documentType": "RG",
+  "correlationId": "corr-123",
+  "createdAt": "2026-06-29T10:00:00Z"
+}
