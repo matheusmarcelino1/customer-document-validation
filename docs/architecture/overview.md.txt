@@ -1,0 +1,36 @@
+# Visão Geral da Arquitetura
+
+A solução CustomerDocumentValidation foi organizada com separação por camadas e processamento assíncrono.
+
+## Serviços
+
+### API
+
+Responsável por receber dados cadastrais e documentos.
+
+### Worker
+
+Responsável por consumir eventos e processar documentos em background.
+
+## Camadas
+
+### Domain
+
+Contém entidades e regras centrais.
+
+### Application
+
+Contém casos de uso, commands, queries e interfaces.
+
+### Infrastructure
+
+Contém implementações de MongoDB, S3 e Kafka.
+
+## Fluxo
+
+API -> MongoDB
+API -> S3
+API -> Kafka
+Kafka -> Worker
+Worker -> S3
+Worker -> MongoDB
