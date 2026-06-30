@@ -66,7 +66,7 @@ public sealed class CadastroClienteMongoRepository : ICadastroClienteRepository
             Id = cadastroCliente.Id,
             NomeCompleto = cadastroCliente.NomeCompleto,
             NumeroDocumento = cadastroCliente.NumeroDocumento,
-            DataNascimento = cadastroCliente.DataNascimento,
+            DataNascimento = cadastroCliente.DataNascimento.ToDateTime(TimeOnly.MinValue),
             Status = (int)cadastroCliente.Status,
             CriadoEmUtc = cadastroCliente.CriadoEmUtc,
             AtualizadoEmUtc = cadastroCliente.AtualizadoEmUtc,
@@ -97,14 +97,14 @@ public sealed class CadastroClienteMongoRepository : ICadastroClienteRepository
             document.Documento.ChaveArquivo);
 
         return CadastroCliente.Reconstituir(
-            document.Id,
-            document.NomeCompleto,
-            document.NumeroDocumento,
-            document.DataNascimento,
-            documento,
-            (StatusProcessamento)document.Status,
-            document.CriadoEmUtc,
-            document.AtualizadoEmUtc,
-            document.MotivoErro);
+    document.Id,
+    document.NomeCompleto,
+    document.NumeroDocumento,
+    DateOnly.FromDateTime(document.DataNascimento),
+    documento,
+    (StatusProcessamento)document.Status,
+    document.CriadoEmUtc,
+    document.AtualizadoEmUtc,
+    document.MotivoErro);
     }
 }

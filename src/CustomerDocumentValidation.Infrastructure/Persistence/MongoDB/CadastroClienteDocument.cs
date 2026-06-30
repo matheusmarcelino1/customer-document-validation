@@ -13,7 +13,7 @@ public sealed class CadastroClienteDocument
 
     public string NumeroDocumento { get; set; } = string.Empty;
 
-    public DateOnly DataNascimento { get; set; }
+    public DateTime DataNascimento { get; set; }
 
     public DocumentoCadastralDocument Documento { get; set; } = new();
 

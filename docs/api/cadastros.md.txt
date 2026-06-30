@@ -1,0 +1,28 @@
+# API de Cadastros
+
+## Endpoint
+
+POST /api/cadastros
+
+## Tipo de conteúdo
+
+multipart/form-data
+
+## Campos
+
+| Campo | Descrição |
+|---|---|
+| NomeCompleto | Nome completo do cliente |
+| NumeroDocumento | Número do documento informado no cadastro |
+| DataNascimento | Data de nascimento no formato yyyy-MM-dd |
+| TipoDocumento | Tipo do documento cadastral |
+| Documento | Arquivo do documento |
+
+## Exemplo de resposta
+
+```json
+{
+  "cadastroClienteId": "guid",
+  "status": "PendenteProcessamento",
+  "mensagem": "Cadastro recebido e enviado para processamento."
+}
