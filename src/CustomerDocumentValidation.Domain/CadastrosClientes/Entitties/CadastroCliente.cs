@@ -68,6 +68,32 @@ public sealed class CadastroCliente : Entity
             criadoEmUtc);
     }
 
+    public static CadastroCliente Reconstituir(
+    string id,
+    string nomeCompleto,
+    string numeroDocumento,
+    DateOnly dataNascimento,
+    DocumentoCadastral documento,
+    StatusProcessamento status,
+    DateTime criadoEmUtc,
+    DateTime? atualizadoEmUtc,
+    string? motivoErro)
+    {
+        var cadastroCliente = new CadastroCliente(
+            id,
+            nomeCompleto,
+            numeroDocumento,
+            dataNascimento,
+            documento,
+            criadoEmUtc);
+
+        cadastroCliente.Status = status;
+        cadastroCliente.AtualizadoEmUtc = atualizadoEmUtc;
+        cadastroCliente.MotivoErro = motivoErro;
+
+        return cadastroCliente;
+    }
+
     public void MarcarComoEmProcessamento(DateTime atualizadoEmUtc)
     {
         if (Status == StatusProcessamento.ProcessadoComSucesso)

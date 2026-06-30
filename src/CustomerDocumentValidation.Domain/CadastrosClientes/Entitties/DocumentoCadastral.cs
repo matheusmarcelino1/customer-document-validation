@@ -70,4 +70,23 @@ public sealed class DocumentoCadastral : Entity
             bucket.Trim(),
             chaveArquivo.Trim());
     }
+
+    public static DocumentoCadastral Reconstituir(
+    string id,
+    TipoDocumento tipo,
+    string nomeArquivoOriginal,
+    string tipoConteudo,
+    long tamanhoEmBytes,
+    string bucket,
+    string chaveArquivo)
+    {
+        return new DocumentoCadastral(
+            id,
+            tipo,
+            nomeArquivoOriginal,
+            tipoConteudo,
+            tamanhoEmBytes,
+            bucket,
+            chaveArquivo);
+    }
 }
