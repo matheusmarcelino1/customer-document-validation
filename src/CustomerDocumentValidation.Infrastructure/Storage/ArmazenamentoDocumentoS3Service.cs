@@ -50,6 +50,38 @@ public sealed class ArmazenamentoDocumentoS3Service : IArmazenamentoDocumentoSer
             chaveArquivo);
     }
 
+    public async Task<Stream> BaixarAsync(
+    string bucket,
+    string chaveArquivo,
+    CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(bucket))
+            throw new ArgumentException("O bucket deve ser informado.", nameof(bucket));
+
+        if (string.IsNullOrWhiteSpace(chaveArquivo))
+            throw new ArgumentException("A chave do arquivo deve ser informada.", nameof(chaveArquivo));
+
+        var request = new GetObjectRequest
+        {
+            BucketName = bucket,
+            Key = chaveArquivo
+        };
+
+        using var response = await _s3Client.GetObjectAsync(
+            request,
+            cancellationToken);
+
+        var memoryStream = new MemoryStream();
+
+        await response.ResponseStream.CopyToAsync(
+            memoryStream,
+            cancellationToken);
+
+        memoryStream.Position = 0;
+
+        return memoryStream;
+    }
+
     private static string CriarChaveArquivo(string nomeArquivoOriginal)
     {
         var extensao = Path.GetExtension(nomeArquivoOriginal);

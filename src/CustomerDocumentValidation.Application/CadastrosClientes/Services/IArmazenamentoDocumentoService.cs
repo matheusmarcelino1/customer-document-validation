@@ -7,4 +7,9 @@ public interface IArmazenamentoDocumentoService
         string nomeArquivoOriginal,
         string tipoConteudo,
         CancellationToken cancellationToken);
+
+    Task<Stream> BaixarAsync(
+        string bucket,
+        string chaveArquivo,
+        CancellationToken cancellationToken);
 }
