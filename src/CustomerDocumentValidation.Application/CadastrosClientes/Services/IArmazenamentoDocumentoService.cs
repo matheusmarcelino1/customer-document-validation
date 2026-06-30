@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace CustomerDocumentValidation.Application.CadastrosClientes.Services;
 
-namespace CustomerDocumentValidation.Application.CadastrosClientes.Services
+public interface IArmazenamentoDocumentoService
 {
-    internal class IArmazenamentoDocumentoService
-    {
-    }
+    Task<ResultadoArmazenamentoDocumento> ArmazenarAsync(
+        Stream conteudoArquivo,
+        string nomeArquivoOriginal,
+        string tipoConteudo,
+        CancellationToken cancellationToken);
 }

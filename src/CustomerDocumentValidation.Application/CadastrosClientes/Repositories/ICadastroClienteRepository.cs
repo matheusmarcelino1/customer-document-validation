@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CustomerDocumentValidation.Domain.CadastrosClientes.Entities;
 
-namespace CustomerDocumentValidation.Application.CadastrosClientes.Repositories
+namespace CustomerDocumentValidation.Application.CadastrosClientes.Repositories;
+
+public interface ICadastroClienteRepository
 {
-    internal class ICadastroClienteRepository
-    {
-    }
+    Task AdicionarAsync(
+        CadastroCliente cadastroCliente,
+        CancellationToken cancellationToken);
+
+    Task<CadastroCliente?> ObterPorIdAsync(
+        string cadastroClienteId,
+        CancellationToken cancellationToken);
+
+    Task AtualizarAsync(
+        CadastroCliente cadastroCliente,
+        CancellationToken cancellationToken);
 }

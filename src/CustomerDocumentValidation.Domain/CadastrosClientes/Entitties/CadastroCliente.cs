@@ -1,7 +1,7 @@
 ﻿using CustomerDocumentValidation.Domain.CadastrosClientes.Enums;
 using CustomerDocumentValidation.SharedKernel.Primitives;
 
-namespace CustomerDocumentValidation.Domain.CadastrosClientes.Entidades;
+namespace CustomerDocumentValidation.Domain.CadastrosClientes.Entities;
 
 public sealed class CadastroCliente : Entity
 {

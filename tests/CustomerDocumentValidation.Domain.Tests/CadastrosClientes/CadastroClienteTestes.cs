@@ -1,4 +1,4 @@
-﻿using CustomerDocumentValidation.Domain.CadastrosClientes.Entidades;
+﻿using CustomerDocumentValidation.Domain.CadastrosClientes.Entities;
 using CustomerDocumentValidation.Domain.CadastrosClientes.Enums;
 
 namespace CustomerDocumentValidation.Domain.Tests.CadastrosClientes;

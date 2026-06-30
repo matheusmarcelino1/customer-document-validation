@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace CustomerDocumentValidation.Application.CadastrosClientes.Services;
 
-namespace CustomerDocumentValidation.Application.CadastrosClientes.Services
+public interface IEventPublisher
 {
-    internal class IEventPublisher
-    {
-    }
+    Task PublicarAsync<TEvent>(
+        string topico,
+        TEvent evento,
+        CancellationToken cancellationToken);
 }
