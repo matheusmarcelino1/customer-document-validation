@@ -50,6 +50,12 @@ public sealed class DocumentoRecebidoWorker : BackgroundService
             {
                 var resultadoConsumo = consumer.Consume(stoppingToken);
 
+                _logger.LogInformation(
+                    "Mensagem consumida do Kafka. Topico: {Topico}, Particao: {Particao}, Offset: {Offset}",
+                    resultadoConsumo.Topic,
+                    resultadoConsumo.Partition.Value,
+                    resultadoConsumo.Offset.Value);
+
                 if (resultadoConsumo?.Message is null)
                     continue;
 
